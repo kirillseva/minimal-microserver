@@ -1,3 +1,6 @@
+#!/usr/bin/env Rscript
+interactive <- function(...) TRUE
+library(methods)
 options(repos = c(CRAN = "http://cran.rstudio.com"))
 install.packages(c("devtools", "httpuv", "jsonlite"))
 devtools::install_github("robertzk/microserver")
