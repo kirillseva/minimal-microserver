@@ -1,4 +1,6 @@
 #!/usr/bin/env Rscript
 interactive <- function(...) TRUE
 library(methods)
-microserver::run_server(list("/ping" = function(p, q) c("pong")), 3464)
+library(s3mpi)
+routes <- s3read(Sys.getenv("MICROSERVER_ROUTES"))
+microserver::run_server(routes, 8101)
